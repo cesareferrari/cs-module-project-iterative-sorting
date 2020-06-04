@@ -17,8 +17,25 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
+    # initialize the swapped variable to True
+    # keeps track of when values are swapped.
+    # when swapped is False, the list is sorted
+    swapped = True
 
+    # keep looping through the list while swapped is true
+    # if there are swapped value, the list is not sorted
+    # it's sorted when there are no more swapped values
+    while swapped is True:
+        swapped = False
+
+        # length of list - 1 (because the last
+        # element doesn't have a right element to swap with
+        for i in range(0, len(arr) - 1): 
+            if arr[i] > arr[i + 1]:
+                # do the swapping by reassigning the variables to each other
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                # there is a swap, so keep looping
+                swapped = True
 
     return arr
 
